@@ -5,6 +5,30 @@ body {
     padding: 0;
 }
 
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8.5fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+
+.header {
+    grid-area: header;
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
 .container-musica {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -109,30 +133,54 @@ body {
     grid-area: footer-musica;
 }
 
-
-
-.container {
+.container-log {
     display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 11fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     grid-template-areas:
-        "header"
-        "main"
-        "footer";
+        "header-log header-log header-log header-log"
+        "main-log main-log main-log main-log"
+        "main-log main-log main-log main-log"
+        "main-log main-log main-log main-log"
+        "main-log main-log main-log main-log"
+        "footer-log footer-log footer-log footer-log";
 }
 
-.header {
-    grid-area: header;
+.header-log {
+    grid-area: header-log;
 }
 
-.main {
-    grid-area: main;
+.main-log {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "txt txt txt txt"
+        "login login register register"
+        "login login register register"
+        ". . . .";
+    grid-area: main-log;
 }
 
-.footer {
-    grid-area: footer;
+.login {
+    grid-area: login;
+}
+
+.register {
+    grid-area: register;
+}
+
+.txt {
+    grid-area: txt;
+}
+
+.footer-log {
+    grid-area: footer-log;
 }
 
 .navbar {
@@ -261,26 +309,174 @@ a:visited {
 .h1-musica {
     font-family: cinzel;
 }
+
 .p-musica {
     font-family: roboto;
 }
+
 .Met-a {
     text-decoration: underline;
 }
 
-@media (min-width: 375px) {
-    .container {
-        grid-template-rows: 1fr 13fr 1fr;
+.login, .register {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-input {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+label {
+    margin-right: 3%;
+    font-family: roboto;
+}
+
+input{
+    border-radius: 10px;
+    height: 20px;
+    width: 250px;
+}
+
+.txt {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+.Logintxt{
+    font-family: cinzel;
+    font-size: 1.3em;
+}
+
+@media (min-width: 320px) {
+    .main-musica {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0fr 0fr 0fr 0fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "titles titles titles"
+            "KEM RTL MOP"
+            "AJFA M L"
+            "RL GINC STA"
+            "DM HTSF .";
+        grid-area: main-musica;
+    }
+
+    .Album-img {
+        width: 80%;
+        margin: 3% 10%;
+    }
+
+    .h1-musica {
+        font-size: 1.3rem;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .p-musica {
+        font-size: 1rem;
+        text-align: center;
+    }
+    .txt{
+        font-size: 0.8em;
+    }
+    input{
+        width: 70%;
+    }
+    input, label {
+        margin: 1px;
     }
 }
 
-@media (min-width: 425px) {
+@media (min-width: 375px) {
     .container {
-        grid-template-rows: 1fr 14fr 1fr;
+        grid-template-rows: 1fr 8.5fr 1fr;
     }
+
+    .main-musica {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0fr 0fr 0fr 0fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "titles titles titles"
+            "KEM RTL MOP"
+            "AJFA M L"
+            "RL GINC STA"
+            "DM HTSF .";
+        grid-area: main-musica;
+    }
+
+    .Album-img {
+        width: 80%;
+        margin: 3% 10%;
+    }
+}
+
+@media (max-width: 425px) {
+    .container {
+        grid-template-rows: 1fr 8.5fr 1fr;
+    }
+
+    .Album-img {
+        margin: 3% 10%;
+        width: 80%;
+    }
+
+    .main-musica {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 0fr 0fr 0fr 0fr;
+        gap: 1px 1px;
+        grid-template-areas:
+            "titles titles titles"
+            "KEM RTL MOP"
+            "AJFA M L"
+            "RL GINC STA"
+            "DM HTSF .";
+        grid-area: main-musica;
+    }
+
+    .container-input {
+        flex-direction: column;
+    }
+    .main-log {
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 0.5fr 1fr 1fr; 
+        gap: 0px 0px; 
+        grid-template-areas: 
+          "txt txt"
+          "login login"
+          "register register"; 
+        grid-area: main-log; 
+      }
+        .login, .register{
+        margin: 5px 0px 5px 20px;
+        }
+        .footer-log{
+        margin-top: 30px;
+        }
+
 }
 
 @media (min-width: 768px) {
+    .container {
+        grid-template-rows: 1fr 6.6fr 1fr;
+    }
+
     .imgs1 {
         width: 25%
     }
@@ -307,11 +503,28 @@ a:visited {
         width: 25%;
         margin: 20% auto;
     }
+
+    .Album-img {
+        width: 80%;
+    }
+
+    .h1-musica {
+        font-size: 1.7rem;
+        margin-top: 10%;
+    }
+
+    .p-musica {
+        font-size: 1.1rem;
+    }
+
+    .container-input {
+        flex-direction: column;
+    }
 }
 
 @media (min-width: 1024px) {
     .container {
-        grid-template-rows: 1fr 15fr 1fr;
+        grid-template-rows: 1fr 6.5fr 1fr;
     }
 
     #popupBody {
@@ -319,23 +532,46 @@ a:visited {
         width: 25%;
         margin: 10% auto;
     }
+
+    .h1-musica {
+        font-size: 1.9rem;
+        margin-top: 10%;
+    }
+
+    .p-musica {
+        font-size: 1.2rem;
+    }
+
+    .container-input {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 @media (min-width: 1440px) {
-    .container {
-        grid-template-rows: 1fr 20fr 1fr;
-    }
-
     #popupBody {
         height: 60%;
         width: 20%;
         margin: 10% auto;
     }
+
+    .h1-musica {
+        font-size: 2.2rem;
+        margin-top: 0;
+    }
+
+    .p-musica {
+        font-size: 1.7rem;
+    }
 }
 
 @media (min-width: 1366px) {
     .container {
-        grid-template-rows: 1fr 19fr 1fr;
+        grid-template-rows: 1fr 7.9fr 1fr;
     }
 
     #popupBody {
