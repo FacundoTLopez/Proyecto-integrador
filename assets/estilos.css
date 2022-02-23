@@ -318,7 +318,8 @@ a:visited {
     text-decoration: underline;
 }
 
-.login, .register {
+.login,
+.register {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -343,7 +344,7 @@ label {
     font-family: roboto;
 }
 
-input{
+input {
     border-radius: 10px;
     height: 20px;
     width: 250px;
@@ -354,9 +355,16 @@ input{
     justify-content: center;
     height: 100px;
 }
-.Logintxt{
+
+.Logintxt {
     font-family: cinzel;
     font-size: 1.3em;
+}
+
+.buttonn {
+    width: 50%;
+    border-radius: 10px;
+    font-family: cinzel;
 }
 
 @media (min-width: 320px) {
@@ -389,13 +397,17 @@ input{
         font-size: 1rem;
         text-align: center;
     }
-    .txt{
+
+    .txt {
         font-size: 0.8em;
     }
-    input{
+
+    input {
         width: 70%;
     }
-    input, label {
+
+    input,
+    label {
         margin: 1px;
     }
 }
@@ -452,23 +464,27 @@ input{
     .container-input {
         flex-direction: column;
     }
+
     .main-log {
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 0.5fr 1fr 1fr; 
-        gap: 0px 0px; 
-        grid-template-areas: 
-          "txt txt"
-          "login login"
-          "register register"; 
-        grid-area: main-log; 
-      }
-        .login, .register{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+            "txt txt"
+            "login login"
+            "register register";
+        grid-area: main-log;
+    }
+
+    .login,
+    .register {
         margin: 5px 0px 5px 20px;
-        }
-        .footer-log{
+    }
+
+    .footer-log {
         margin-top: 30px;
-        }
+    }
 
 }
 
