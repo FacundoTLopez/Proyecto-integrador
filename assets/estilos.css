@@ -366,6 +366,9 @@ input {
     border-radius: 10px;
     font-family: cinzel;
 }
+a:link{
+    color: black;
+}
 
 @media (min-width: 320px) {
     .main-musica {
