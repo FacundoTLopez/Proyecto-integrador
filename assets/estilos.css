@@ -403,10 +403,6 @@ a:link{
         text-align: center;
     }
 
-    .txt {
-        font-size: 0.8em;
-    }
-
     input {
         width: 70%;
     }
@@ -414,6 +410,10 @@ a:link{
     input,
     label {
         margin: 1px;
+    }
+    .Logintxt{
+        font-size: 1em;
+        text-align: center;
     }
 }
 
