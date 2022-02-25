@@ -371,6 +371,9 @@ input {
 a:link{
     color: black;
 }
+li{
+    text-align: center;
+}
 
 @media (min-width: 320px) {
     .main-musica {
